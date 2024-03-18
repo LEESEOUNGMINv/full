@@ -1,29 +1,29 @@
 const express = require('express');
-const port = process.env.PORT || 3008;
+const port = process.env.PORT || 3007;
 const path = require('path');
 const bodyParser = require('body-parser');
 const hdb = require('hdb');
 const app = express();
 //const { ODataServer } = require('odata-v4-server');
-// const cds = require('@sap/cds');
+const cds = require('@sap/cds');
 
-// async function init() {
-//   const app = express();
+async function init() {
+  const app = express();
 
-//   // CDS 모델 로드
-//   await cds.connect();
-//   await cds.load('srv/cat-service.cds');
+  // CDS 모델 로드
+  await cds.connect();
+  await cds.load('srv/cat-service.cds');
 
-//   // OData 엔드포인트 설정
-//   app.use('/odata', cds.server);
+  // OData 엔드포인트 설정
+  app.use('/odata', cds.server);
 
-//   const PORT = process.env.PORT || 3007;
-//   app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-//   });
-// }
+  // const PORT = process.env.PORT || 3007;
+  // app.listen(PORT, () => {
+  //   console.log(`Server is running on port ${PORT}`);
+  // });
+}
 
-// init();
+init();
 
 // // OData 엔드포인트 라우팅 설정
 // app.use('/odata', (req, res, next) => {
