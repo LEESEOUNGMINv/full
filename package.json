@@ -2,15 +2,25 @@
   "dependencies": {
     "@sap/cds": "^7.7.2",
     "@sap/hana-client": "^2.19.21",
+    "@sap/hdi-deploy": "^5.0.1",
     "@ui5/cli": "^3.9.1",
+    "deploy": "^1.0.3",
     "express": "^4.18.3",
     "hdb": "^0.19.7",
     "jsonwebtoken": "^9.0.2",
+    "odata-v4-server": "^0.2.13",
     "uuid": "^9.0.1"
   },
   "name": "ex",
   "version": "1.0.0",
   "main": "index.html",
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
+  },
   "scripts": {
     "start": "node srv/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

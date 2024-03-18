@@ -1,9 +1,36 @@
 const express = require('express');
-const port = process.env.PORT || 3007;
+const port = process.env.PORT || 3008;
 const path = require('path');
 const bodyParser = require('body-parser');
 const hdb = require('hdb');
 const app = express();
+//const { ODataServer } = require('odata-v4-server');
+// const cds = require('@sap/cds');
+
+// async function init() {
+//   const app = express();
+
+//   // CDS 모델 로드
+//   await cds.connect();
+//   await cds.load('srv/cat-service.cds');
+
+//   // OData 엔드포인트 설정
+//   app.use('/odata', cds.server);
+
+//   const PORT = process.env.PORT || 3007;
+//   app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+//   });
+// }
+
+// init();
+
+// // OData 엔드포인트 라우팅 설정
+// app.use('/odata', (req, res, next) => {
+//   new ODataServer()
+//     .model(require('srv/cat-service.cds'))
+//     .handler(req, res);
+// });
 
 // JSON 형식의 데이터를 파싱하기 위한 미들웨어 추가
 app.use(bodyParser.json());
