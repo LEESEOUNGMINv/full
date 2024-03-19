@@ -5,6 +5,10 @@ entity Users {
   password: String(100);
 }
 
+service Main {
+    entity Users as projection on myapp.Users;
+}
+
 // // OData 서비스 정의
 // service MyService {
 //   // Products 엔터티를 OData 서비스로 노출
