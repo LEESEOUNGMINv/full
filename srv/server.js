@@ -6,17 +6,6 @@ const hdb = require('hdb');
 const app = express();
 const cds = require('@sap/cds');
 
-async function init() {
-  // CDS 모델 로드
-  await cds.connect();
-  await cds.load('srv/cat-service.cds');
-
-  // OData 엔드포인트 설정
-  app.use('/odata', cds.server);
-}
-
-init();
-
 // JSON 형식의 데이터를 파싱하기 위한 미들웨어 추가
 app.use(bodyParser.json());
 

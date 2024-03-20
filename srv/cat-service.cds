@@ -5,9 +5,46 @@ entity Users {
   password: String(100);
 }
 
-service Main {
-    entity Users as projection on myapp.Users;
+// OData 서비스 정의
+service log {
+  //entity Users as projection on myapp.Users;
+  entity myapp.Users {
+    key username: String(100);
+    password: String(100);
+  }
 }
+// using { my.bookshop as my } from '../db/schema';
+// service CatalogService @(path:'/browse') {
+
+//   @readonly entity Books as SELECT from my.Books {*,
+//     author.name as author
+//     } excluding { createdBy, modifiedBy };
+
+//     action submitOrder (book:Books:ID, amount: Integer);
+//   }
+
+
+// service login {
+//     entity ODUsers as projection on myapp.Users;
+//     // entity Users {
+//     //   key username: String(100);
+//     //   password: String(100);
+//     // }
+
+//     // CREATE operation
+//     function createUsers(OUsers: Users) returns Users;
+
+//     // READ operation
+//     function getUsers() returns Users[];
+//     function getUsersByID(username: String) returns Users;
+
+//     // UPDATE operation
+//     function updateUsers(username: String, OUsers: Users) returns Users;
+
+//     // DELETE operation
+//     function deleteUsers(username: String) returns Boolean;
+// }
+
 
 // // OData 서비스 정의
 // service MyService {
