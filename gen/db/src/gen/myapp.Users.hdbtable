@@ -1,0 +1,5 @@
+COLUMN TABLE myapp_Users (
+  username NVARCHAR(100) NOT NULL,
+  password NVARCHAR(100),
+  PRIMARY KEY(username)
+)

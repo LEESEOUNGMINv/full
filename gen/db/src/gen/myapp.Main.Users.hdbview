@@ -1,0 +1,4 @@
+VIEW myapp_Main_Users AS SELECT
+  Users_0.username,
+  Users_0.password
+FROM myapp_Users AS Users_0

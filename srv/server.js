@@ -17,7 +17,8 @@ const client = hdb.createClient({
   host: '04c5a0f8-8e74-49a6-90f1-b7e973dbb6fc.hana.trial-us10.hanacloud.ondemand.com',
   port: 443, // HANA 포트 (기본값)
   user: 'DBADMIN',
-  password: 'F0d9qwjig!',
+  password: 'F0d9qwjig!'
+  // useTLS: true
 });
 
 // HANA 데이터베이스 연결 오류

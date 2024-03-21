@@ -1,43 +1,36 @@
 {
-    "dependencies": {
-        "@sap/cds": "^7.7.3",
-        "@sap/hana-client": "^2.19.21",
-        "@sap/hdi-deploy": "^5.0.1",
-        "@ui5/cli": "^3.9.1",
-        "console": "^0.7.2",
-        "deploy": "^1.0.3",
-        "express": "^4.18.3",
-        "hdb": "^0.19.7",
-        "inti": "^0.0.0",
-        "jsonwebtoken": "^9.0.2",
-        "node": "^21.7.1",
-        "npm": "^10.5.0",
-        "odata-v4-server": "^0.2.13",
-        "promisify": "^0.0.3"
+  "dependencies": {
+    "@sap/cds": "^7.7.2",
+    "@sap/hana-client": "^2.19.21",
+    "@sap/hdi-deploy": "^5.0.1",
+    "@ui5/cli": "^3.9.1",
+    "deploy": "^1.0.3",
+    "hdb": "^0.19.7",
+    "jsonwebtoken": "^9.0.2",
+    "node": "^21.7.1",
+    "node-tls": "^0.10.2",
+    "npm": "^10.5.0",
+    "odata-v4-server": "^0.2.13",
+    "uuid": "^9.0.1"
+  },
+  "name": "ex",
+  "version": "1.0.0",
+  "main": "index.html",
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
     },
-    "name": "ex",
-    "version": "1.0.0",
-    "main": "index.html",
-    "scripts": {
-        "start": "cds-serve",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy ex --delete-services --delete-service-keys --delete-service-brokers",
-        "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-    },
-    "cds": {
-        "requires": {
-            "db": {
-                "kind": "hana"
-            }
-        }
-    },
-    "author": "",
-    "license": "ISC",
-    "description": "",
-    "devDependencies": {
-        "@sap/ux-specification": "^1.120.6",
-        "rimraf": "^3.0.2"
+    "hana": {
+      "deploy-format": "hdbtable"
     }
+  },
+  "scripts": {
+    "start": "node srv/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
